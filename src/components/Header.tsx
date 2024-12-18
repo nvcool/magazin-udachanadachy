@@ -3,7 +3,6 @@ import logo from "../assets/header/header-svg.svg";
 import { AccountImageSvg } from "../assets/header/AccountImageSvg";
 import { SearchImageSvg } from "../assets/header/SearchImageSvg";
 import { HeartImageSvg } from "../assets/header/HeartImageSvg";
-import { CartImage } from "../assets/header/CartImageSvg";
 import { useCart } from "./context/CartContext";
 import { CartModal } from "./СartModal";
 
