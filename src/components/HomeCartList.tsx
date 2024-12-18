@@ -5,74 +5,122 @@ import { useMebel } from "./context/MebelContext";
 import { useCart } from "./context/CartContext";
 import { IMebel } from "../types/IMebel";
 
-export const HomeCartList = () => {
-  const { mebels } = useMebel();
-  const { setCart } = useCart();
+interface IHomeCartListProps {
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
+}
 
-  // const addToCart = (mebel: IMebel) => {
-  //   setCart((prevCart) => {
-  //     const existingMebel = prevCart.some((item) => item.id === mebel.id);
-
-  //     if (existingMebel) {
-  //       return prevCart.map((item) =>
-  //         item.id === mebel.id ? { ...item, count: item.count + 1 } : item
-  //       );
-  //     } else {
-  //       return [...prevCart, { ...mebel, count: 1 }];
-  //     }
-  //   });
-  // };
+export const HomeCartList = ({
+  formatPrice,
+  subtotalPrice,
+}: IHomeCartListProps) => {
+  const { furnitures } = useMebel();
+  const { cart, setCart } = useCart();
 
   const addToCart = (mebel: IMebel) => {
     setCart((prevState) => {
       const existingMebel = prevState.some((item) => item.id === mebel.id);
 
       if (existingMebel) {
-        return prevState.map((item) =>
-          item.id === mebel.id ? { ...item, count: item.count + 1 } : item
-        );
-      } else {
-        return [...prevState, { ...mebel, count: 1 }];
+        return prevState.map((item) => {
+          return item.id === mebel.id
+            ? { ...item, count: item.count + 1 }
+            : item;
+        });
       }
+      return [...prevState, { ...mebel, count: 1 }];
+    });
+  };
+
+  const plusToCart = (id: number) => {
+    setCart((prev) => {
+      return prev.map((item) => {
+        return item.id === id ? { ...item, count: item.count + 1 } : item;
+      });
+    });
+  };
+
+  const totalItemsCartCount = (id: number) => {
+    return cart.reduce((total, item) => {
+      if (item.id === id) {
+        return total + item.count;
+      }
+      return total;
+    }, 0);
+  };
+
+  const minusCart = (id: number) => {
+    setCart((prev) => {
+      return prev
+        .map((item) => {
+          return item.id === id ? { ...item, count: item.count - 1 } : item;
+        })
+        .filter((item) => item.count > 0);
     });
   };
 
   return (
-    <div>
-      <ul className="flex flex-wrap gap-8 justify-center mb-10">
-        {mebels.map((mebel) => {
+    <div className="grid justify-items-center">
+      <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10 ">
+        {furnitures.map((furniture) => {
           return (
-            <li key={mebel.image} className=" w-max">
+            <li key={furniture.image} className=" w-full">
               <div className="relative bg-grey bg-opacity-20 overflow-hidden ">
                 <div className="relative w-max mb-4">
-                  <span className="absolute right-[24px] top-[24px] text-white bg-red px-2 py-4 rounded-full">
-                    {mebel.sale}
-                  </span>
-                  <img src={mebel.image} alt="" />
+                  {furniture.tag ? (
+                    <span className="absolute right-[24px] top-[24px] text-white bg-green px-3 py-4 rounded-full">
+                      {furniture.tag}
+                    </span>
+                  ) : null}
+                  {furniture.sale ? (
+                    <span className="absolute right-[24px] top-[24px] text-white bg-red px-2 py-4 rounded-full">
+                      -{furniture.sale}%
+                    </span>
+                  ) : null}
+
+                  <img className="mx-0" src={furniture.image} alt="" />
                 </div>
                 <div className="grid px-4">
                   <span className="text-darkGrey text-2xl leading-[120%] font-semibold mb-2">
-                    {mebel.title}
+                    {furniture.title}
                   </span>
                   <span className="text-liteGray font-medium leading-[150%] mb-2">
                     {" "}
-                    {mebel.description}
+                    {furniture.description}
                   </span>
                   <div className="flex mb-8 gap-4 items-center">
                     <span className="text-xl font-semibold leading-[150%]">
-                      {mebel.price}
+                      Rs. {formatPrice(furniture.price)}
                     </span>
                     <span className="leading-[150%] line-through opacity-30">
-                      {mebel.unprice}
+                      Rs. {subtotalPrice(furniture.unprice)}
                     </span>
                   </div>
                 </div>
                 <div className="bg-darkGrey absolute left-0 top-0 w-full h-full bg-opacity-50 flex flex-col justify-center items-center gap-6 opacity-0 transition-all ease-in-out hover:opacity-100  z-10">
-                  <button
-                    onClick={() => addToCart(mebel)}
-                    className="bg-white text-orange w-max px-14 py-3 hover:bg-orange hover:bg-opacity-40 hover:text-white transition-colors ease-in">
-                    add to cart
-                  </button>
+                  {totalItemsCartCount(furniture.id) === 0 ? (
+                    <button
+                      onClick={() => addToCart(furniture)}
+                      className="bg-white text-orange w-max px-14 py-3 hover:bg-orange hover:bg-opacity-40 hover:text-white transition-colors ease-in">
+                      add to cart
+                    </button>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <button
+                        className="hover:text-white py-2 px-4 rounded-full hover:bg-green text-darkGrey bg-white transition-colors ease-in text-xl "
+                        onClick={() => plusToCart(furniture.id)}>
+                        +
+                      </button>
+                      <span className=" py-2 px-4 text-center w-20 bg-orange text-white rounded-full text-xl">
+                        {totalItemsCartCount(furniture.count)}
+                      </span>
+                      <button
+                        className="hover:text-white py-2 px-4 rounded-full hover:bg-red text-darkGrey bg-white transition-colors ease-in text-xl "
+                        onClick={() => minusCart(furniture.id)}>
+                        -
+                      </button>
+                    </div>
+                  )}
                   <div className="flex gap-5">
                     <button className="flex text-white font-semibold leading-[150%] hover:text-orange transition-colors ease-in items-center">
                       <img src={shareImage} alt="" />
@@ -99,3 +147,17 @@ export const HomeCartList = () => {
     </div>
   );
 };
+
+// const addToCart = (mebel: IMebel) => {
+//   setCart((prevCart) => {
+//     const existingMebel = prevCart.some((item) => item.id === mebel.id);
+
+//     if (existingMebel) {
+//       return prevCart.map((item) =>
+//         item.id === mebel.id ? { ...item, count: item.count + 1 } : item
+//       );
+//     } else {
+//       return [...prevCart, { ...mebel, count: 1 }];
+//     }
+//   });
+// };

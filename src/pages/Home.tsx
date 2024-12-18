@@ -4,7 +4,12 @@ import browse2 from "../assets/home/browse2.png";
 import browse3 from "../assets/home/browse3.png";
 import { HomeCartList } from "../components/HomeCartList";
 
-export const Home = () => {
+interface IHomeProps {
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
+}
+
+export const Home = ({ formatPrice, subtotalPrice }: IHomeProps) => {
   return (
     <div className="grid gap-[56px]">
       <section className=" relative">
@@ -54,7 +59,7 @@ export const Home = () => {
         <h2 className="text-center text-darkGrey text-[40px] font-bold leading-[120%] mb-8">
           Our Products
         </h2>
-        <HomeCartList />
+        <HomeCartList formatPrice={formatPrice} subtotalPrice={subtotalPrice} />
       </section>
       <section></section>
     </div>

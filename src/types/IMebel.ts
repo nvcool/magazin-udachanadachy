@@ -5,6 +5,7 @@ export interface IMebel {
   description: string;
   price: number;
   unprice: number;
-  sale?: string;
+  tag?: string;
+  sale?: number;
   count: number;
 }

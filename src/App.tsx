@@ -26,7 +26,7 @@ const carts = [
     description: "Stylish cafe chair",
     price: 2500000,
     unprice: 3500000,
-    sale: "-30%",
+    sale: 30,
     count: 1,
   },
   {
@@ -36,7 +36,7 @@ const carts = [
     description: "Stylish cafe chair",
     price: 2500000,
     unprice: 3500000,
-    sale: "-30%",
+    sale: 30,
     count: 1,
   },
   {
@@ -46,7 +46,7 @@ const carts = [
     description: "Luxury big sofa",
     price: 7000000,
     unprice: 14000000,
-    sale: "-50%",
+    sale: 50,
     count: 1,
   },
   {
@@ -56,7 +56,7 @@ const carts = [
     description: "Outdoor bar table and stool",
     price: 500000,
     unprice: 3500000,
-    sale: "New",
+    tag: "New",
     count: 1,
   },
   {
@@ -75,7 +75,7 @@ const carts = [
     description: "Small mug",
     price: 150000,
     unprice: 3500000,
-    sale: "New",
+    tag: "New",
     count: 1,
   },
   {
@@ -85,7 +85,7 @@ const carts = [
     description: "Cute bed set",
     price: 7000000,
     unprice: 14000000,
-    sale: "-50%",
+    sale: 50,
     count: 1,
   },
   {
@@ -95,7 +95,7 @@ const carts = [
     description: "Minimalist flower pot",
     price: 500000,
     unprice: 14000000,
-    sale: "New",
+    tag: "New",
     count: 1,
   },
 ];
@@ -104,8 +104,16 @@ const initialStateCart: IMebel[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
 );
 
+const formatPrice = (price: number) => {
+  return price.toLocaleString("en-EN");
+};
+
+const subtotalPrice = (unprice: number) => {
+  return unprice.toLocaleString("en-En");
+};
+
 function App() {
-  const [mebels, setMebels] = useState<IMebel[]>(carts);
+  const [furnitures, setFurnitures] = useState<IMebel[]>(carts);
   const [cart, setCart] = useState<IMebel[]>(initialStateCart);
 
   useEffect(() => {
@@ -114,11 +122,19 @@ function App() {
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>
-      <MebelContext.Provider value={{ mebels, setMebels }}>
+      <MebelContext.Provider value={{ furnitures, setFurnitures }}>
         <div className="">
           <Routes>
             <Route element={<AppLayout />}>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={
+                  <Home
+                    formatPrice={formatPrice}
+                    subtotalPrice={subtotalPrice}
+                  />
+                }
+              />
               <Route path="shop" element={<Shop />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />

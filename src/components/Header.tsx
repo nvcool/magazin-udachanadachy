@@ -4,15 +4,21 @@ import { AccountImageSvg } from "../assets/header/AccountImageSvg";
 import { SearchImageSvg } from "../assets/header/SearchImageSvg";
 import { HeartImageSvg } from "../assets/header/HeartImageSvg";
 import { CartImage } from "../assets/header/CartImageSvg";
+import { useCart } from "./context/CartContext";
+import { CartModal } from "./СartModal";
 
 const links = [
   { link: "/", name: "Home" },
-  { link: "shop", name: "Shop" },
+  { link: "cart", name: "Cart" },
   { link: "about", name: "About" },
   { link: "contact", name: "Contact" },
 ];
 
 export const Header = () => {
+  const { cart } = useCart();
+
+  const totalCount = cart.length;
+
   return (
     <header className="flex justify-between items-center py-[20px] px-[54px]">
       <NavLink
@@ -42,9 +48,12 @@ export const Header = () => {
         <a href="#">
           <HeartImageSvg />
         </a>
-        <NavLink to={"cart"}>
-          <CartImage />
-        </NavLink>
+        <div className="flex gap-2 items-center">
+          <span className="px-2 w-[30px] text-center rounded-full bg-green text-white">
+            {totalCount}
+          </span>
+          <CartModal />
+        </div>
       </div>
     </header>
   );

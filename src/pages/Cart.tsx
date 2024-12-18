@@ -38,27 +38,27 @@ export const Cart = () => {
         </div>
       </section>
       <section className="py-20 px-[100px] flex gap-[30px] ">
-        <div className="flex-1">
-          <div className="flex bg-background h-fit py-4 px-[140px] justify-between font-medium mb-[55px]">
-            <span>Product</span>
-            <span>Price</span>
-            <div className="flex gap-9">
+        <div className="flex-1 w-full">
+          <div className="grid grid-cols-3 bg-background h-fit py-4 px-[140px]  font-medium mb-[55px]">
+            <span className="">Product</span>
+            <span className="">Price</span>
+            <div className="flex  gap-9">
               <span>Quantity</span>
               <span>Subtotal</span>
             </div>
           </div>
           <CartList />{" "}
         </div>
-        <div className="bg-background px-[75px] pt-[15px] pb-20 ">
+        <div className="bg-background px-[75px] pt-[15px] pb-20 w-[393px] h-fit">
           <h2 className="text-[32px] font-semibold mb-[60px]">Cart Totals</h2>
           <div className="flex flex-col gap-[30px] mb-10 max-w-[393px] w-full">
             <div className="flex gap-[60px]">
               <span className="font-medium">Subtotal</span>
-              <span className="opacity-30 ">Rs. {subotalPrice}</span>
+              <span className="opacity-30 ">Rs.{subotalPrice}</span>
             </div>
             <div className="flex gap-[60px]">
               <span className="font-medium">Total</span>
-              <span className="text-orange text-[20px]">Rs. {totalPrice}</span>
+              <span className="text-orange text-[20px]">Rs.{totalPrice}</span>
             </div>
           </div>
           <button className="border py-[14px] px-[60px] rounded-[15px] hover:bg-green hover:text-white transition-colors ease-in">
