@@ -5,9 +5,15 @@ import { useCart } from "./context/CartContext";
 
 interface ICartListItem {
   item: IMebel;
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
 }
 
-export const CartListItem = ({ item }: ICartListItem) => {
+export const CartListItem = ({
+  item,
+  formatPrice,
+  subtotalPrice,
+}: ICartListItem) => {
   const { setCart } = useCart();
 
   const deleteCartItem = (id: number) => {
@@ -39,7 +45,13 @@ export const CartListItem = ({ item }: ICartListItem) => {
       <div className="flex w-full px-[34px]">
         <div className="grid grid-cols-3 w-full  items-center mr-[50px]">
           <span className="   text-grey">{item.title}</span>
-          <span className="  text-grey">Rs.{item.price}</span>
+          <div className=" flex gap-2">
+            <span className=" text-orange ">Rs.{formatPrice(item.price)}</span>
+            {item.sale ? (
+              <span className="text-grey">-{item.sale}%</span>
+            ) : null}
+          </div>
+
           <div className="flex  gap-4">
             <div className="flex gap-4 items-center">
               <button
@@ -67,7 +79,9 @@ export const CartListItem = ({ item }: ICartListItem) => {
                 className="px-3 py-1 bg-red bg-opacity-70 hover:bg-opacity-100 transition-colors ease-in text-white rounded-full mr-4">
                 -
               </button>
-              <span>Rs.{item.unprice}</span>
+              <span className="line-through text-grey">
+                Rs.{subtotalPrice(item.unprice)}
+              </span>
             </div>
           </div>
         </div>

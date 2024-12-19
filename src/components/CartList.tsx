@@ -1,7 +1,12 @@
 import { CartListItem } from "./CartListItem";
 import { useCart } from "./context/CartContext";
 
-export const CartList = () => {
+interface ICartListProps {
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
+}
+
+export const CartList = ({ formatPrice, subtotalPrice }: ICartListProps) => {
   const { cart } = useCart();
   return (
     <ul className="grid gap-3">
@@ -9,7 +14,11 @@ export const CartList = () => {
         return (
           <li key={item.id}>
             <div className=""></div>
-            <CartListItem item={item} />
+            <CartListItem
+              item={item}
+              formatPrice={formatPrice}
+              subtotalPrice={subtotalPrice}
+            />
           </li>
         );
       })}

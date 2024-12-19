@@ -19,7 +19,7 @@ export const Header = () => {
   const totalCount = cart.length;
 
   return (
-    <header className="flex justify-between items-center py-[20px] px-[54px]">
+    <header className="flex justify-between items-center py-[20px] px-[54px] fixed top-0 left-0 z-50 w-full bg-white bg-opacity-80">
       <NavLink
         className="text-[34px] font-bold flex gap-2 hover:text-liteGray transition-colors ease-in"
         to={"/"}>

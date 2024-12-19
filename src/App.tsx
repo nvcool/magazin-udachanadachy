@@ -138,7 +138,15 @@ function App() {
               <Route path="shop" element={<Shop />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
-              <Route path="cart" element={<Cart />} />
+              <Route
+                path="cart"
+                element={
+                  <Cart
+                    formatPrice={formatPrice}
+                    subtotalPrice={subtotalPrice}
+                  />
+                }
+              />
             </Route>
           </Routes>
         </div>

@@ -112,7 +112,7 @@ export const HomeCartList = ({
                         +
                       </button>
                       <span className=" py-2 px-4 text-center w-20 bg-orange text-white rounded-full text-xl">
-                        {totalItemsCartCount(furniture.count)}
+                        {totalItemsCartCount(furniture.id)}
                       </span>
                       <button
                         className="hover:text-white py-2 px-4 rounded-full hover:bg-red text-darkGrey bg-white transition-colors ease-in text-xl "
