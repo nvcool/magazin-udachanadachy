@@ -125,7 +125,13 @@ function App() {
       <MebelContext.Provider value={{ furnitures, setFurnitures }}>
         <div className="">
           <Routes>
-            <Route element={<AppLayout />}>
+            <Route
+              element={
+                <AppLayout
+                  formatPrice={formatPrice}
+                  subtotalPrice={subtotalPrice}
+                />
+              }>
               <Route
                 path="/"
                 element={

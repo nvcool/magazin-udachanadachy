@@ -1,10 +1,15 @@
 import { Outlet } from "react-router";
 import { Header } from "../components/Header";
 
-export const AppLayout = () => {
+interface IAppLayoutProps {
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
+}
+
+export const AppLayout = ({ formatPrice, subtotalPrice }: IAppLayoutProps) => {
   return (
     <div>
-      <Header />
+      <Header formatPrice={formatPrice} subtotalPrice={subtotalPrice} />
       <main>
         <Outlet />
       </main>

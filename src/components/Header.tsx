@@ -6,6 +6,11 @@ import { HeartImageSvg } from "../assets/header/HeartImageSvg";
 import { useCart } from "./context/CartContext";
 import { CartModal } from "./СartModal";
 
+interface IHeaderProps {
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
+}
+
 const links = [
   { link: "/", name: "Home" },
   { link: "cart", name: "Cart" },
@@ -13,7 +18,7 @@ const links = [
   { link: "contact", name: "Contact" },
 ];
 
-export const Header = () => {
+export const Header = ({ formatPrice, subtotalPrice }: IHeaderProps) => {
   const { cart } = useCart();
 
   const totalCount = cart.length;
@@ -51,7 +56,7 @@ export const Header = () => {
           <span className="px-2 w-[30px] text-center rounded-full bg-green text-white">
             {totalCount}
           </span>
-          <CartModal />
+          <CartModal formatPrice={formatPrice} subtotalPrice={subtotalPrice} />
         </div>
       </div>
     </header>

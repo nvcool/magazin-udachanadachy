@@ -5,7 +5,12 @@ import { useCart } from "./context/CartContext";
 import cartItem from "../assets/cart/cart-item.png";
 import { NavLink } from "react-router";
 
-export const CartModal = () => {
+interface ICartModalProps {
+  formatPrice: (price: number) => string;
+  subtotalPrice: (unprice: number) => string;
+}
+
+export const CartModal = ({ formatPrice, subtotalPrice }: ICartModalProps) => {
   const { cart, setCart } = useCart();
 
   const deleteCart = (id: number) => {
@@ -60,7 +65,7 @@ export const CartModal = () => {
                         <span className="font-light">{item.count}</span>
                         <span className="font-light">x</span>
                         <span className="text-orange font-medium">
-                          Rs.{item.unprice}
+                          Rs.{subtotalPrice(item.unprice)}
                         </span>
                       </div>
                     </div>
@@ -77,12 +82,14 @@ export const CartModal = () => {
               <div className="flex  mb-4 ">
                 <span className="flex-1">Subtotal</span>
                 <span className="text-grey opacity-60 line-through font-semibold">
-                  Rs.{subtotalCart}
+                  Rs.{subtotalPrice(subtotalCart)}
                 </span>
               </div>
               <div className="flex">
                 <span className="flex-1">Total</span>
-                <span className="text-xl text-orange">Rs.{totalCartModal}</span>
+                <span className="text-xl text-orange">
+                  Rs.{formatPrice(totalCartModal)}
+                </span>
               </div>
             </div>
             <div className="flex gap-[14px] justify-center">
