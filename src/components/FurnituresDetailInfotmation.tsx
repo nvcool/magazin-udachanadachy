@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { IMebel } from "../types/IMebel";
 import { useCart } from "./context/CartContext";
-import { useMebel } from "./context/MebelContext";
+// import { useMebel } from "./context/MebelContext";
 import { NavLink } from "react-router";
 import { FurnituresDetailContent } from "./FurnituresDetailContent";
 interface IFurnituresDetailInfotmationProps {
@@ -13,12 +13,12 @@ export const FurnituresDetailInfotmation = ({
   furnitur,
   formatPrice,
 }: IFurnituresDetailInfotmationProps) => {
-  const [variant, setVariant] = useState<{ size: string; color: string }>({
-    size: furnitur.size[0].size,
-    color: furnitur.color[0].color,
-  });
+  // const [variant, setVariant] = useState<{ size: string; color: string }>({
+  //   size: furnitur.size[0].size,
+  //   color: furnitur.color[0].color,
+  // });
 
-  const { setFurnitures } = useMebel();
+  // const { setFurnitures } = useMebel();
   const { cart, setCart } = useCart();
 
   const plusCount = (id: number) => {
