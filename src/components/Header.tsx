@@ -8,7 +8,6 @@ import { CartModal } from "./СartModal";
 
 interface IHeaderProps {
   formatPrice: (price: number) => string;
-  subtotalPrice: (unprice: number) => string;
 }
 
 const links = [
@@ -18,18 +17,18 @@ const links = [
   { link: "contact", name: "Contact" },
 ];
 
-export const Header = ({ formatPrice, subtotalPrice }: IHeaderProps) => {
+export const Header = ({ formatPrice }: IHeaderProps) => {
   const { cart } = useCart();
 
   const totalCount = cart.length;
 
   return (
-    <header className="flex justify-between items-center py-[20px] px-[54px] fixed top-0 left-0 z-50 w-full bg-white bg-opacity-80">
+    <header className="flex justify-between items-center py-[20px] px-[54px] sticky top-0  z-50 w-full bg-white bg-opacity-80">
       <NavLink
         className="text-[34px] font-bold flex gap-2 hover:text-liteGray transition-colors ease-in"
         to={"/"}>
         <img src={logo} alt="" />
-        Furniro
+        Funiro
       </NavLink>
       <ul className="flex gap-[75px] font-medium items-center">
         {links.map((link) => {
@@ -56,7 +55,7 @@ export const Header = ({ formatPrice, subtotalPrice }: IHeaderProps) => {
           <span className="px-2 w-[30px] text-center rounded-full bg-green text-white">
             {totalCount}
           </span>
-          <CartModal formatPrice={formatPrice} subtotalPrice={subtotalPrice} />
+          <CartModal formatPrice={formatPrice} />
         </div>
       </div>
     </header>

@@ -5,12 +5,13 @@ import arrowImgae from "../assets/cart/arrow-nav-cart.svg";
 import { CartList } from "../components/CartList";
 import { useCart } from "../components/context/CartContext";
 
+import { Garante } from "../components/Garante";
+
 interface ICartProps {
   formatPrice: (price: number) => string;
-  subtotalPrice: (unprice: number) => string;
 }
 
-export const Cart = ({ formatPrice, subtotalPrice }: ICartProps) => {
+export const Cart = ({ formatPrice }: ICartProps) => {
   const { cart } = useCart();
 
   const totalPrice = cart.reduce(
@@ -44,15 +45,17 @@ export const Cart = ({ formatPrice, subtotalPrice }: ICartProps) => {
       </section>
       <section className="py-20 px-[100px] flex gap-[30px] ">
         <div className="flex-1 w-full">
-          <div className="grid grid-cols-3 bg-background h-fit py-4 px-[140px]  font-medium mb-[55px]">
-            <span className="">Product</span>
-            <span className="">Price</span>
-            <div className="flex  gap-9">
+          <div className="grid grid-cols-2 gap-40 bg-background h-fit py-4 px-[140px]  font-medium mb-[55px]">
+            <div className="flex gap-20">
+              <span className="">Product</span>
+              <span className="">Price</span>
+            </div>
+            <div className="flex  gap-20">
               <span>Quantity</span>
               <span>Subtotal</span>
             </div>
           </div>
-          <CartList formatPrice={formatPrice} subtotalPrice={subtotalPrice} />{" "}
+          <CartList formatPrice={formatPrice} />{" "}
         </div>
         <div className="bg-background px-[75px] pt-[15px] pb-20 w-[393px] h-fit">
           <h2 className="text-[32px] font-semibold mb-[60px]">Cart Totals</h2>
@@ -60,7 +63,7 @@ export const Cart = ({ formatPrice, subtotalPrice }: ICartProps) => {
             <div className="flex gap-[60px]">
               <span className="font-medium">Subtotal</span>
               <span className="text-grey line-through ">
-                Rs.{subtotalPrice(subotalPriceSum)}
+                Rs.{formatPrice(subotalPriceSum)}
               </span>
             </div>
             <div className="flex gap-[60px]">
@@ -75,7 +78,7 @@ export const Cart = ({ formatPrice, subtotalPrice }: ICartProps) => {
           </button>
         </div>
       </section>
-      <section></section>
+      <Garante />
     </div>
   );
 };

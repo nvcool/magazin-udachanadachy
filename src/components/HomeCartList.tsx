@@ -7,13 +7,9 @@ import { IMebel } from "../types/IMebel";
 
 interface IHomeCartListProps {
   formatPrice: (price: number) => string;
-  subtotalPrice: (unprice: number) => string;
 }
 
-export const HomeCartList = ({
-  formatPrice,
-  subtotalPrice,
-}: IHomeCartListProps) => {
+export const HomeCartList = ({ formatPrice }: IHomeCartListProps) => {
   const { furnitures } = useMebel();
   const { cart, setCart } = useCart();
 
@@ -59,26 +55,38 @@ export const HomeCartList = ({
     });
   };
 
+  // const showMoreList = () => {
+  //   if (showMore) {
+  //     const newList: IMebel[] = furnitures.map((item) => {
+  //       return { ...item, id: Date.now() };
+  //     });
+  //     setFurnitures((prev) => [...prev, ...newList]);
+  //   } else {
+  //     setFurnitures(furnitures);
+  //   }
+  //   setShowMore(!showMore);
+  // };
+
   return (
-    <div className="grid justify-items-center">
-      <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10 ">
+    <div className="grid justify-items-center ">
+      <ul className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10 px-10 max-w-[1440px] w-full">
         {furnitures.map((furniture) => {
           return (
-            <li key={furniture.image} className=" w-full">
-              <div className="relative bg-grey bg-opacity-20 overflow-hidden ">
-                <div className="relative w-max mb-4">
-                  {furniture.tag ? (
+            <li key={furniture.id} className=" w-full">
+              <div className="relative h-full bg-grey bg-opacity-20 overflow-hidden ">
+                <div className="relative w-full mb-4">
+                  {furniture.tag && (
                     <span className="absolute right-[24px] top-[24px] text-white bg-green px-3 py-4 rounded-full">
                       {furniture.tag}
                     </span>
-                  ) : null}
-                  {furniture.sale ? (
+                  )}
+                  {furniture.sale && (
                     <span className="absolute right-[24px] top-[24px] text-white bg-red px-2 py-4 rounded-full">
                       -{furniture.sale}%
                     </span>
-                  ) : null}
+                  )}
 
-                  <img className="mx-0" src={furniture.image} alt="" />
+                  <img className="w-full" src={furniture.image[0]} alt="" />
                 </div>
                 <div className="grid px-4">
                   <span className="text-darkGrey text-2xl leading-[120%] font-semibold mb-2">
@@ -93,7 +101,7 @@ export const HomeCartList = ({
                       Rs. {formatPrice(furniture.price)}
                     </span>
                     <span className="leading-[150%] line-through opacity-30">
-                      Rs. {subtotalPrice(furniture.unprice)}
+                      Rs. {formatPrice(furniture.unprice)}
                     </span>
                   </div>
                 </div>
