@@ -4,6 +4,9 @@ import { useCart } from "./context/CartContext";
 // import { useMebel } from "./context/MebelContext";
 import { NavLink } from "react-router";
 import { FurnituresDetailContent } from "./FurnituresDetailContent";
+import { useState } from "react";
+import StarRatings from "react-star-ratings";
+
 interface IFurnituresDetailInfotmationProps {
   furnitur: IMebel;
   formatPrice: (price: number) => string;
@@ -18,8 +21,26 @@ export const FurnituresDetailInfotmation = ({
   //   color: furnitur.color[0].color,
   // });
 
-  // const { setFurnitures } = useMebel();
   const { cart, setCart } = useCart();
+
+  const [sizeChange, setSizeChange] = useState<string>(furnitur.size[0].size);
+  const [colorChange, setColorChange] = useState<string>(
+    furnitur.color[0].color
+  );
+  const contentInformation = [
+    {
+      id: 186,
+      label: "Description",
+    },
+    {
+      id: 245,
+      label: "Additional Information",
+    },
+    { id: 124, label: `Reviews [ ${furnitur.review.length} ]` },
+  ];
+  const [contentChoise, setContentChoise] = useState<number>(
+    contentInformation[0].id
+  );
 
   const plusCount = (id: number) => {
     setCart((prev) => {
@@ -66,11 +87,15 @@ export const FurnituresDetailInfotmation = ({
 
   const reviewQuantity = furnitur.review.length;
 
+  const midlRating =
+    furnitur.review.reduce((item, piton) => item + piton.rating, 0) /
+    furnitur.review.length;
+
   return (
     <div className="">
       <section className="grid grid-flow-col gap-[100px] mb-14 px-[100px]">
+        {/* IMAGE DESCRIPTION */}
         <div className="flex gap-8 w-full h-[500px]  ">
-          {/* IMAGE DESCRIPTION*/}
           <div className="grid gap-7 ">
             {furnitur.descriptionImage.map((image, index) => {
               return (
@@ -91,44 +116,65 @@ export const FurnituresDetailInfotmation = ({
         </div>
         <div className="grid h-full">
           <h1 className="text-[42px]">{furnitur.title}</h1>
-          <div className="flex items-center gap-4 mb-3">
-            <span className="">@ @ @ @ @</span>
-            <span className="text-4xl font-extralight text-grey"> | </span>
-            <button className="text-grey text-sm hover:text-darkGrey transition-colors ease-in">
-              {reviewQuantity} Customer Review
-            </button>
-          </div>
           <span className="text-grey text-2xl font-medium mb-[10px]">
             Rs.{formatPrice(furnitur.unprice)}
           </span>
-          <span className="text-sm mb-6">{furnitur.description}</span>
+          <div className="flex items-center gap-4 mb-3">
+            <StarRatings
+              rating={midlRating}
+              starRatedColor="orange"
+              starEmptyColor="white"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="5px"
+            />
+            <span className="text-4xl font-extralight text-grey"> | </span>
+            <button
+              onClick={() => setContentChoise(contentInformation[2].id)}
+              id="customerReview"
+              className="text-grey text-sm hover:text-darkGrey transition-colors ease-in">
+              <a href="#reviews">{reviewQuantity} Customer Review</a>
+            </button>
+          </div>
+          <span className="text-sm mb-6 w-[424px] overflow-hidden truncate ">
+            {furnitur.description}
+          </span>
 
-          {/* SIZE*/}
+          {/* SIZE */}
           <div className="grid gap-3 mb-[18px]">
             <span className="text-grey text-sm">Size</span>
             <div className="flex gap-4">
               {furnitur.size.map((item, index) => (
                 <button
+                  onClick={() => setSizeChange(item.size)}
                   key={index} // Уникальный ключ для каждого элемента
-                  className="p-2 bg-background rounded-md 
-        hover:text-white hover:bg-orange hover:bg-opacity-60
-        focus:text-white focus:bg-orange transition-colors ease-in">
+                  className={`p-2  rounded-md 
+                hover:text-white hover:bg-orange hover:bg-opacity-60 transition-colors ease-in 
+                ${
+                  sizeChange === item.size
+                    ? " bg-orange text-white"
+                    : "bg-background"
+                }`}>
                   {item.size}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* COLOR*/}
+          {/* COLOR */}
           <div className="grid gap-3 mb-8">
             <span className="text-grey text-sm">Color</span>
             <div className="flex gap-3">
               {furnitur.color.map((color, index) => {
                 return (
                   <button
-                    className="p-2 bg-background rounded-md 
-                hover:text-white hover:bg-orange hover:bg-opacity-60
-                focus:text-white focus:bg-orange transition-colors ease-in"
+                    onClick={() => setColorChange(color.color)}
+                    className={`p-2  rounded-md 
+                hover:text-white hover:bg-orange hover:bg-opacity-60 transition-colors ease-in ${
+                  colorChange === color.color
+                    ? "bg-orange text-white"
+                    : "bg-background"
+                }`}
                     key={index}>
                     {color.color}
                   </button>
@@ -137,7 +183,7 @@ export const FurnituresDetailInfotmation = ({
             </div>
           </div>
 
-          {/*ANY BUTTON */}
+          {/* ANY BUTTON */}
 
           <div className="flex gap-5 mb-[60px]">
             {cart.find((item) => item.id === furnitur.id) ? (
@@ -222,8 +268,10 @@ export const FurnituresDetailInfotmation = ({
       </section>
       <section className="pt-12 border-t border-grey border-opacity-50">
         <FurnituresDetailContent
+          contentInformation={contentInformation}
+          contentChoise={contentChoise}
+          setContentChoise={setContentChoise}
           furnitur={furnitur}
-          reviewQuantity={reviewQuantity}
         />
       </section>
     </div>

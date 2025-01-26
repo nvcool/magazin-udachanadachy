@@ -12,12 +12,33 @@ import homeImage6 from "../assets/home/home-furniture/home-6.png";
 import homeImage7 from "../assets/home/home-furniture/home-7.png";
 import homeImage8 from "../assets/home/home-furniture/home-8.png";
 import homeImage9 from "../assets/home/home-furniture/home-9.png";
+import { useEffect, useState } from "react";
+import { IMebel } from "../types/IMebel";
 
 interface IHomeProps {
   formatPrice: (price: number) => string;
 }
 
+const getAllFurniture = () => {
+  return fetch("http://localhost:3000/furnitures").then((data) => {
+    return data.json();
+  });
+};
+
 export const Home = ({ formatPrice }: IHomeProps) => {
+  const [furnitures, setFurnitures] = useState<IMebel[]>([]);
+
+  const getAllFurnitureHandler = async () => {
+    const data = await getAllFurniture();
+    setFurnitures(data);
+  };
+
+  console.log(furnitures);
+
+  useEffect(() => {
+    getAllFurnitureHandler();
+  }, []);
+
   return (
     <div className="grid gap-[56px]">
       <section className=" relative">
@@ -67,7 +88,7 @@ export const Home = ({ formatPrice }: IHomeProps) => {
         <h2 className="text-center text-darkGrey text-[40px] font-bold leading-[120%] mb-8">
           Our Products
         </h2>
-        <HomeCartList formatPrice={formatPrice} />
+        <HomeCartList furnitures={furnitures} formatPrice={formatPrice} />
       </section>
       <section className=" grid justify-center text-center mb-[50px]">
         <span className="text-liteGray text-xl font-semibold leading-[150%]">

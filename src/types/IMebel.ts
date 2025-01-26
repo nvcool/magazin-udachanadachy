@@ -9,7 +9,6 @@ export interface IMebel {
   tag?: string;
   sale?: number;
   count: number;
-  rating: number;
   size: { size: string }[];
   color: { color: string }[];
   review: { comment: string; nickName: string; rating: number }[];

@@ -130,12 +130,12 @@ const carts: IMebel[] = [
     image: [cart1],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "A soft sofa",
-    description: "A comfortable and stylish sofa for the living room.",
+    description:
+      "A comfortable and stylish sofa for the living room. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 49999,
     unprice: 59999,
     sale: 15,
     count: 1,
-    rating: 4.8,
     size: [{ size: "200x90x80" }, { size: "220x100x85" }],
     color: [{ color: "Purple" }, { color: "Black" }, { color: "Brown" }],
     review: [
@@ -166,18 +166,18 @@ const carts: IMebel[] = [
     image: [cart2],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Leather armchair",
-    description: "An elegant armchair made of genuine leather.",
+    description:
+      "An elegant armchair made of genuine leather. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 29999,
     unprice: 34999,
     count: 1,
-    rating: 4.7,
     size: [{ size: "100x80x90" }],
     color: [{ color: "black" }, { color: "brown" }],
     review: [
       {
         comment: "Excellent chair for the office.",
         nickName: "Oleg",
-        rating: 5,
+        rating: 3,
       },
     ],
     information: "Genuine leather, wooden frame.",
@@ -204,12 +204,12 @@ const carts: IMebel[] = [
     image: [cart3],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Dining table",
-    description: "Large wooden dining table.",
+    description:
+      "Large wooden dining table. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 25999,
     unprice: 27999,
     tag: "best seller",
     count: 1,
-    rating: 4.6,
     size: [{ size: "180x90x75" }],
     color: [{ color: "oak" }, { color: "walnut" }],
     review: [
@@ -239,11 +239,11 @@ const carts: IMebel[] = [
     image: [cart4],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Chair with soft seat",
-    description: "Ergonomic chair for the office or home.",
+    description:
+      "Ergonomic chair for the office or home. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 5999,
     unprice: 6999,
     count: 1,
-    rating: 4.5,
     size: [{ size: "45x50x90" }],
     color: [{ color: "white" }, { color: "black" }],
     review: [
@@ -278,11 +278,11 @@ const carts: IMebel[] = [
     image: [cart5],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Children's bed",
-    description: "Sturdy bed for children with safety rails.",
+    description:
+      "Sturdy bed for children with safety rails. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 17999,
     unprice: 19999,
     count: 1,
-    rating: 4.9,
     size: [{ size: "160x80x60" }],
     color: [{ color: "blue" }, { color: "pink" }],
     review: [{ comment: "The kids love it!", nickName: "Svetlana", rating: 5 }],
@@ -310,12 +310,12 @@ const carts: IMebel[] = [
     image: [cart6],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Wardrobe doors",
-    description: "Spacious wardrobe with mirrored doors.",
+    description:
+      "Spacious wardrobe with mirrored doors. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 34999,
     unprice: 39999,
     tag: "popular",
     count: 1,
-    rating: 4.7,
     size: [{ size: "200x60x220" }],
     color: [{ color: "white" }, { color: "wenge" }],
     review: [
@@ -346,12 +346,12 @@ const carts: IMebel[] = [
     image: [cart7],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Kitchen set",
-    description: "Modular kitchen set with backlighting.",
+    description:
+      "Modular kitchen set with backlighting. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 99999,
     unprice: 119999,
     sale: 20,
     count: 1,
-    rating: 4.9,
     size: [{ size: "300x60x220" }],
     color: [{ color: "white" }, { color: "gray" }],
     review: [
@@ -385,11 +385,11 @@ const carts: IMebel[] = [
     image: [cart8],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "TV stand",
-    description: "Elegant TV stand with shelves for accessories.",
+    description:
+      "Elegant TV stand with shelves for accessories. \n \n Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
     price: 12999,
     unprice: 14999,
     count: 1,
-    rating: 4.6,
     size: [{ size: "150x40x50" }],
     color: [{ color: "black" }, { color: "oak" }],
     review: [

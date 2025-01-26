@@ -1,0 +1,349 @@
+{
+  "furnitures": [
+    {
+      "id": "1",
+      "image": ["/assets/furniture/cart1.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "A soft sofa",
+      "description": "A comfortable and stylish sofa for the living room. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 49999,
+      "unprice": 59999,
+      "sale": 15,
+      "count": 1,
+      "size": [{ "size": "200x90x80" }, { "size": "220x100x85" }],
+      "color": [
+        { "color": "Purple" },
+        { "color": "Black" },
+        { "color": "Brown" }
+      ],
+      "review": [
+        {
+          "comment": "A very comfortable sofa!",
+          "nickName": "Anna",
+          "rating": 5
+        },
+        { "comment": "Good quality.", "nickName": "Ivan", "rating": 4 }
+      ],
+      "information": "Made of high-quality materials.",
+      "sku": "SKU12345",
+      "category": "Sofas",
+      "tags": ["soft furniture", "living room"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "image": ["/assets/furniture/cart2.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Leather armchair",
+      "description": "An elegant armchair made of genuine leather. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 29999,
+      "unprice": 34999,
+      "count": 1,
+      "size": [{ "size": "100x80x90" }],
+      "color": [{ "color": "black" }, { "color": "brown" }],
+      "review": [
+        {
+          "comment": "Excellent chair for the office.",
+          "nickName": "Oleg",
+          "rating": 3
+        }
+      ],
+      "information": "Genuine leather, wooden frame.",
+      "sku": "SKU12346",
+      "category": "Armchairs",
+      "tags": ["leather", "office"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "image": ["/assets/furniture/cart3.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Dining table",
+      "description": "Large wooden dining table. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 25999,
+      "unprice": 27999,
+      "tag": "best seller",
+      "count": 1,
+      "size": [{ "size": "180x90x75" }],
+      "color": [{ "color": "oak" }, { "color": "walnut" }],
+      "review": [
+        {
+          "comment": "Stylish and sturdy table.",
+          "nickName": "Maria",
+          "rating": 5
+        }
+      ],
+      "information": "Wooden tabletop and metal legs.",
+      "sku": "SKU12347",
+      "category": "Tables",
+      "tags": ["dining table", "dining room"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "image": ["/assets/furniture/cart4.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Chair with soft seat",
+      "description": "Ergonomic chair for the office or home. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 5999,
+      "unprice": 6999,
+      "count": 1,
+      "size": [{ "size": "45x50x90" }],
+
+      "color": [{ "color": "white" }, { "color": "black" }],
+      "review": [
+        { "comment": "Very comfortable!", "nickName": "Denis", "rating": 5 },
+        {
+          "comment": "The seat is soft, but the backrest is stiff.",
+          "nickName": "Katya",
+          "rating": 4
+        }
+      ],
+      "information": "Durable material, chrome legs.",
+      "sku": "SKU12348",
+      "category": "Chairs",
+      "tags": ["office", "comfort"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "image": ["/assets/furniture/cart5.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Children's bed",
+      "description": "Sturdy bed for children with safety rails. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 17999,
+      "unprice": 19999,
+      "count": 1,
+      "size": [{ "size": "160x80x60" }],
+      "color": [{ "color": "blue" }, { "color": "pink" }],
+      "review": [
+        { "comment": "The kids love it!", "nickName": "Svetlana", "rating": 5 }
+      ],
+      "information": "Eco-friendly materials, safe design.",
+      "sku": "SKU12349",
+      "category": "Beds",
+      "tags": ["children's furniture", "comfort"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "image": ["/assets/furniture/cart6.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Wardrobe doors",
+      "description": "Spacious wardrobe with mirrored doors. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 34999,
+      "unprice": 39999,
+      "tag": "popular",
+      "count": 1,
+      "size": [{ "size": "200x60x220" }],
+      "color": [{ "color": "white" }, { "color": "wenge" }],
+      "review": [
+        {
+          "comment": "Very convenient wardrobe!",
+          "nickName": "Alexey",
+          "rating": 5
+        },
+        { "comment": "Good quality mirrors.", "nickName": "Elena", "rating": 4 }
+      ],
+      "information": "Plenty of space for clothes, sturdy construction.",
+      "sku": "SKU12350",
+      "category": "Wardrobes",
+      "tags": ["wardrobe", "bedroom"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "image": ["/assets/furniture/cart7.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Kitchen set",
+      "description": "Modular kitchen set with backlighting. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 99999,
+      "unprice": 119999,
+      "sale": 20,
+      "count": 1,
+      "size": [{ "size": "300x60x220" }],
+      "color": [{ "color": "white" }, { "color": "gray" }],
+      "review": [
+        {
+          "comment": "A great choice for a modern kitchen.",
+          "nickName": "Margarita",
+          "rating": 5
+        }
+      ],
+      "information": "Custom assembly, built-in backlight.",
+      "sku": "SKU12351",
+      "category": "Kitchen",
+      "tags": ["kitchen", "modular furniture"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "image": ["/assets/furniture/cart8.png"],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "TV stand",
+      "description": "Elegant TV stand with shelves for accessories. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 12999,
+      "unprice": 14999,
+      "count": 1,
+      "size": [{ "size": "150x40x50" }],
+      "color": [{ "color": "black" }, { "color": "oak" }],
+      "review": [
+        {
+          "comment": "Beautiful and functional.",
+          "nickName": "Igor",
+          "rating": 5
+        }
+      ],
+      "information": "MDF with coating, stable frame.",
+      "sku": "SKU12352",
+      "category": "TV Stands",
+      "tags": ["living room", "TV furniture"],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    }
+  ]
+}

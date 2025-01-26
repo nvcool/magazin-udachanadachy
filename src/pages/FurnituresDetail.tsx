@@ -1,32 +1,58 @@
 import { Navigate, useParams } from "react-router";
-import { useMebel } from "../components/context/MebelContext";
 import { FurnituresDetailHeder } from "../components/FurnituresDetailHeder";
 import { FurnituresDetailInfotmation } from "../components/FurnituresDetailInfotmation";
 import { FurntituresDetailRelatedProducts } from "../components/FurntituresDetailRelatedProducts";
+import { IMebel } from "../types/IMebel";
+import { useEffect, useState } from "react";
 
 interface IFurnituresDetailProps {
   formatPrice: (price: number) => string;
 }
 
-export const FurnituresDetail = ({ formatPrice }: IFurnituresDetailProps) => {
-  const { furnitures } = useMebel();
+const getFurniture = (id: number) => {
+  return fetch(`http://localhost:3000/furnitures/${id}`).then((data) => {
+    return data.json();
+  });
+};
 
+export const FurnituresDetail = ({ formatPrice }: IFurnituresDetailProps) => {
+  const [furniture, setFurniture] = useState<IMebel>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const { id } = useParams();
 
-  const furnitur = furnitures.find((item) => item.id === Number(id));
+  const getFurnitureHandler = async () => {
+    setIsLoading(true);
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 5000);
+    });
+    const data = await getFurniture(Number(id));
+    setFurniture(data);
+    setIsLoading(false);
+  };
 
-  if (furnitur === undefined) {
+  useEffect(() => {
+    getFurnitureHandler();
+  }, []);
+
+  if (furniture === undefined && !isLoading) {
     return <Navigate to={"/"} replace />;
   }
 
   return (
     <div className="">
-      <FurnituresDetailHeder furnitur={furnitur} id={id} />
-      <FurnituresDetailInfotmation
-        furnitur={furnitur}
-        formatPrice={formatPrice}
-      />
-      <FurntituresDetailRelatedProducts furnitur={furnitur} />
+      {isLoading && "Loading . . ."}
+      {!isLoading && furniture && (
+        <>
+          <FurnituresDetailHeder furnitur={furniture} id={id} />
+          <FurnituresDetailInfotmation
+            furnitur={furniture}
+            formatPrice={formatPrice}
+          />
+          <FurntituresDetailRelatedProducts furnitur={furniture} />
+        </>
+      )}
     </div>
   );
 };

@@ -6,11 +6,14 @@ import { useCart } from "./context/CartContext";
 import { IMebel } from "../types/IMebel";
 
 interface IHomeCartListProps {
+  furnitures: IMebel[];
   formatPrice: (price: number) => string;
 }
 
-export const HomeCartList = ({ formatPrice }: IHomeCartListProps) => {
-  const { furnitures } = useMebel();
+export const HomeCartList = ({
+  formatPrice,
+  furnitures,
+}: IHomeCartListProps) => {
   const { cart, setCart } = useCart();
 
   const addToCart = (mebel: IMebel) => {
@@ -92,7 +95,7 @@ export const HomeCartList = ({ formatPrice }: IHomeCartListProps) => {
                   <span className="text-darkGrey text-2xl leading-[120%] font-semibold mb-2">
                     {furniture.title}
                   </span>
-                  <span className="text-liteGray font-medium leading-[150%] mb-2">
+                  <span className="text-liteGray font-medium leading-[150%] mb-2 truncate">
                     {" "}
                     {furniture.description}
                   </span>
