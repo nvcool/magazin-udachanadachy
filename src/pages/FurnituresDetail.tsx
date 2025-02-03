@@ -28,21 +28,21 @@ export const FurnituresDetail = ({ formatPrice }: IFurnituresDetailProps) => {
 
   const getFurnitureHandler = async () => {
     setIsLoading(true);
-    const dongle = await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(2);
-      }, 1000);
-      // resolve(getFurniture(Number(id)));
-    }).then((data) => {
-      // setFurniture(data);
-      // setIsLoading(false);
-    });
-    // .catch((data) => {
-    //   console.log(data);
-    // })
-    // .finally(() => {
-    //   console.log("finally");
+    // const dongle = await new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     resolve(2);
+    //   }, 1000);
+    //   // resolve(getFurniture(Number(id)));
+    // }).then(() => {
+    //   // setFurniture(data);
+    //   // setIsLoading(false);
     // });
+    // // .catch((data) => {
+    // //   console.log(data);
+    // // })
+    // // .finally(() => {
+    // //   console.log("finally");
+    // // });
     try {
       const data = await getFurniture(String(id));
       setFurniture(data);
