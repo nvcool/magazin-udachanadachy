@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 
 interface IInputProps extends ComponentProps<"input"> {
   isError?: boolean;

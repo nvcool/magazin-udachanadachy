@@ -42,7 +42,7 @@ export const FurnituresDetailInfotmation = ({
     contentInformation[0].id
   );
 
-  const plusCount = (id: number) => {
+  const plusCount = (id: string) => {
     setCart((prev) => {
       return prev.map((item) => {
         if (item.id === id) {
@@ -53,7 +53,7 @@ export const FurnituresDetailInfotmation = ({
     });
   };
 
-  const minusCount = (id: number) => {
+  const minusCount = (id: string) => {
     setCart((prev) => {
       return prev.map((item) => {
         if (item.id === id) {
@@ -65,7 +65,7 @@ export const FurnituresDetailInfotmation = ({
     setCart((prev) => prev.filter((item) => item.count > 0));
   };
 
-  const itemCount = (itemId: number) => {
+  const itemCount = (itemId: string) => {
     const item = cart.find((item) => item.id === itemId);
     return item ? item.count : 0;
   };
@@ -217,9 +217,13 @@ export const FurnituresDetailInfotmation = ({
               </button>
             )}
 
-            <button className="py-5 px-9 border border-grey border-opacity-50 rounded-lg hover:bg-orange hover:text-white transition-colors ease-in">
-              + Compare
-            </button>
+            {/*EDIT THERE*/}
+
+            <NavLink
+              to={`/furniture/${furnitur.id}/admin`}
+              className="py-5 px-9 border border-grey border-opacity-50 rounded-lg hover:bg-orange hover:text-white transition-colors ease-in">
+              + Edit
+            </NavLink>
           </div>
 
           <div className=" grid gap-3 text-grey pt-[40px] border-t border-grey border-opacity-50">

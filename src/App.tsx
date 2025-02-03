@@ -25,6 +25,7 @@ import descImage4 from "./assets/detailPage/sofa4.png";
 import shareFacebook from "./assets/detailPage/detail-share-facebook.svg";
 import shareInstagram from "./assets/detailPage/detail-share-instagram.svg";
 import shareTwitter from "./assets/detailPage/detail-share-twitter.svg";
+import { Admin } from "./pages/Admin";
 
 // const carts = [
 //   {
@@ -126,7 +127,7 @@ import shareTwitter from "./assets/detailPage/detail-share-twitter.svg";
 
 const carts: IMebel[] = [
   {
-    id: 1,
+    id: "1",
     image: [cart1],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "A soft sofa",
@@ -162,7 +163,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     image: [cart2],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Leather armchair",
@@ -200,7 +201,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     image: [cart3],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Dining table",
@@ -235,7 +236,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     image: [cart4],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Chair with soft seat",
@@ -274,7 +275,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     image: [cart5],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Children's bed",
@@ -306,7 +307,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 6,
+    id: "6",
     image: [cart6],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Wardrobe doors",
@@ -342,7 +343,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 7,
+    id: "7",
     image: [cart7],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "Kitchen set",
@@ -381,7 +382,7 @@ const carts: IMebel[] = [
     ],
   },
   {
-    id: 8,
+    id: "8",
     image: [cart8],
     descriptionImage: [descImage1, descImage2, descImage3, descImage4],
     title: "TV stand",
@@ -439,17 +440,19 @@ function App() {
           <Routes>
             <Route element={<AppLayout formatPrice={formatPrice} />}>
               <Route path="/" element={<Home formatPrice={formatPrice} />} />
-              <Route path="shop" element={<Shop />} />
+              <Route path="shop" element={<Shop formatPrice={formatPrice} />} />
               <Route path="about" element={<About />} />
               <Route
                 path="contact"
                 element={<Contact formatPrice={formatPrice} />}
               />
+              <Route path="admin" element={<Admin />} />
               <Route path="cart" element={<Cart formatPrice={formatPrice} />} />
               <Route
                 path="/furniture/:id"
                 element={<FurnituresDetail formatPrice={formatPrice} />}
               />
+              <Route path="/furniture/:id/admin" element={<Admin />} />
             </Route>
           </Routes>
         </div>

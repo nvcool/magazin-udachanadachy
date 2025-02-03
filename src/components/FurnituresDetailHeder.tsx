@@ -21,7 +21,7 @@ export const FurnituresDetailHeder = ({
         <img className="h-fit" src={linkArrow} alt="" />
         <NavLink
           className="hover:text-black transition-colors ease-in"
-          to={"cart"}>
+          to={"/cart"}>
           Shop
         </NavLink>
         <img className="h-fit" src={linkArrow} alt="" />

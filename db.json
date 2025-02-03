@@ -2,7 +2,9 @@
   "furnitures": [
     {
       "id": "1",
-      "image": ["/assets/furniture/cart1.png"],
+      "image": [
+        "/assets/furniture/cart1.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -15,11 +17,24 @@
       "unprice": 59999,
       "sale": 15,
       "count": 1,
-      "size": [{ "size": "200x90x80" }, { "size": "220x100x85" }],
+      "size": [
+        {
+          "size": "200x90x80"
+        },
+        {
+          "size": "220x100x85"
+        }
+      ],
       "color": [
-        { "color": "Purple" },
-        { "color": "Black" },
-        { "color": "Brown" }
+        {
+          "color": "Purple"
+        },
+        {
+          "color": "Black"
+        },
+        {
+          "color": "Brown"
+        }
       ],
       "review": [
         {
@@ -27,12 +42,19 @@
           "nickName": "Anna",
           "rating": 5
         },
-        { "comment": "Good quality.", "nickName": "Ivan", "rating": 4 }
+        {
+          "comment": "Good quality.",
+          "nickName": "Ivan",
+          "rating": 4
+        }
       ],
       "information": "Made of high-quality materials.",
       "sku": "SKU12345",
       "category": "Sofas",
-      "tags": ["soft furniture", "living room"],
+      "tags": [
+        "soft furniture",
+        "living room"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -50,7 +72,9 @@
     },
     {
       "id": "2",
-      "image": ["/assets/furniture/cart2.png"],
+      "image": [
+        "/assets/furniture/cart2.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -62,8 +86,19 @@
       "price": 29999,
       "unprice": 34999,
       "count": 1,
-      "size": [{ "size": "100x80x90" }],
-      "color": [{ "color": "black" }, { "color": "brown" }],
+      "size": [
+        {
+          "size": "100x80x90"
+        }
+      ],
+      "color": [
+        {
+          "color": "black"
+        },
+        {
+          "color": "brown"
+        }
+      ],
       "review": [
         {
           "comment": "Excellent chair for the office.",
@@ -74,7 +109,10 @@
       "information": "Genuine leather, wooden frame.",
       "sku": "SKU12346",
       "category": "Armchairs",
-      "tags": ["leather", "office"],
+      "tags": [
+        "leather",
+        "office"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -92,7 +130,9 @@
     },
     {
       "id": "3",
-      "image": ["/assets/furniture/cart3.png"],
+      "image": [
+        "/assets/furniture/cart3.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -105,8 +145,19 @@
       "unprice": 27999,
       "tag": "best seller",
       "count": 1,
-      "size": [{ "size": "180x90x75" }],
-      "color": [{ "color": "oak" }, { "color": "walnut" }],
+      "size": [
+        {
+          "size": "180x90x75"
+        }
+      ],
+      "color": [
+        {
+          "color": "oak"
+        },
+        {
+          "color": "walnut"
+        }
+      ],
       "review": [
         {
           "comment": "Stylish and sturdy table.",
@@ -117,7 +168,10 @@
       "information": "Wooden tabletop and metal legs.",
       "sku": "SKU12347",
       "category": "Tables",
-      "tags": ["dining table", "dining room"],
+      "tags": [
+        "dining table",
+        "dining room"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -135,7 +189,9 @@
     },
     {
       "id": "4",
-      "image": ["/assets/furniture/cart4.png"],
+      "image": [
+        "/assets/furniture/cart4.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -147,11 +203,25 @@
       "price": 5999,
       "unprice": 6999,
       "count": 1,
-      "size": [{ "size": "45x50x90" }],
-
-      "color": [{ "color": "white" }, { "color": "black" }],
+      "size": [
+        {
+          "size": "45x50x90"
+        }
+      ],
+      "color": [
+        {
+          "color": "white"
+        },
+        {
+          "color": "black"
+        }
+      ],
       "review": [
-        { "comment": "Very comfortable!", "nickName": "Denis", "rating": 5 },
+        {
+          "comment": "Very comfortable!",
+          "nickName": "Denis",
+          "rating": 5
+        },
         {
           "comment": "The seat is soft, but the backrest is stiff.",
           "nickName": "Katya",
@@ -161,7 +231,10 @@
       "information": "Durable material, chrome legs.",
       "sku": "SKU12348",
       "category": "Chairs",
-      "tags": ["office", "comfort"],
+      "tags": [
+        "office",
+        "comfort"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -179,7 +252,9 @@
     },
     {
       "id": "5",
-      "image": ["/assets/furniture/cart5.png"],
+      "image": [
+        "/assets/furniture/cart5.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -191,15 +266,33 @@
       "price": 17999,
       "unprice": 19999,
       "count": 1,
-      "size": [{ "size": "160x80x60" }],
-      "color": [{ "color": "blue" }, { "color": "pink" }],
+      "size": [
+        {
+          "size": "160x80x60"
+        }
+      ],
+      "color": [
+        {
+          "color": "blue"
+        },
+        {
+          "color": "pink"
+        }
+      ],
       "review": [
-        { "comment": "The kids love it!", "nickName": "Svetlana", "rating": 5 }
+        {
+          "comment": "The kids love it!",
+          "nickName": "Svetlana",
+          "rating": 5
+        }
       ],
       "information": "Eco-friendly materials, safe design.",
       "sku": "SKU12349",
       "category": "Beds",
-      "tags": ["children's furniture", "comfort"],
+      "tags": [
+        "children's furniture",
+        "comfort"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -217,7 +310,9 @@
     },
     {
       "id": "6",
-      "image": ["/assets/furniture/cart6.png"],
+      "image": [
+        "/assets/furniture/cart6.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -230,20 +325,38 @@
       "unprice": 39999,
       "tag": "popular",
       "count": 1,
-      "size": [{ "size": "200x60x220" }],
-      "color": [{ "color": "white" }, { "color": "wenge" }],
+      "size": [
+        {
+          "size": "200x60x220"
+        }
+      ],
+      "color": [
+        {
+          "color": "white"
+        },
+        {
+          "color": "wenge"
+        }
+      ],
       "review": [
         {
           "comment": "Very convenient wardrobe!",
           "nickName": "Alexey",
           "rating": 5
         },
-        { "comment": "Good quality mirrors.", "nickName": "Elena", "rating": 4 }
+        {
+          "comment": "Good quality mirrors.",
+          "nickName": "Elena",
+          "rating": 4
+        }
       ],
       "information": "Plenty of space for clothes, sturdy construction.",
       "sku": "SKU12350",
       "category": "Wardrobes",
-      "tags": ["wardrobe", "bedroom"],
+      "tags": [
+        "wardrobe",
+        "bedroom"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -261,7 +374,9 @@
     },
     {
       "id": "7",
-      "image": ["/assets/furniture/cart7.png"],
+      "image": [
+        "/assets/furniture/cart7.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -274,8 +389,19 @@
       "unprice": 119999,
       "sale": 20,
       "count": 1,
-      "size": [{ "size": "300x60x220" }],
-      "color": [{ "color": "white" }, { "color": "gray" }],
+      "size": [
+        {
+          "size": "300x60x220"
+        }
+      ],
+      "color": [
+        {
+          "color": "white"
+        },
+        {
+          "color": "gray"
+        }
+      ],
       "review": [
         {
           "comment": "A great choice for a modern kitchen.",
@@ -286,7 +412,10 @@
       "information": "Custom assembly, built-in backlight.",
       "sku": "SKU12351",
       "category": "Kitchen",
-      "tags": ["kitchen", "modular furniture"],
+      "tags": [
+        "kitchen",
+        "modular furniture"
+      ],
       "share": [
         {
           "image": "shareFacebook",
@@ -294,7 +423,6 @@
         },
         {
           "image": "shareInstagram",
-
           "link": "/furniture/:id"
         },
         {
@@ -305,7 +433,9 @@
     },
     {
       "id": "8",
-      "image": ["/assets/furniture/cart8.png"],
+      "image": [
+        "/assets/furniture/cart8.png"
+      ],
       "descriptionImage": [
         "/assets/furniture/cart1.png",
         "/assets/furniture/cart2.png",
@@ -317,8 +447,19 @@
       "price": 12999,
       "unprice": 14999,
       "count": 1,
-      "size": [{ "size": "150x40x50" }],
-      "color": [{ "color": "black" }, { "color": "oak" }],
+      "size": [
+        {
+          "size": "150x40x50"
+        }
+      ],
+      "color": [
+        {
+          "color": "black"
+        },
+        {
+          "color": "oak"
+        }
+      ],
       "review": [
         {
           "comment": "Beautiful and functional.",
@@ -329,7 +470,68 @@
       "information": "MDF with coating, stable frame.",
       "sku": "SKU12352",
       "category": "TV Stands",
-      "tags": ["living room", "TV furniture"],
+      "tags": [
+        "living room",
+        "TV furniture"
+      ],
+      "share": [
+        {
+          "image": "shareFacebook",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareInstagram",
+          "link": "/furniture/:id"
+        },
+        {
+          "image": "shareTwitter",
+          "link": "/furniture/:id"
+        }
+      ]
+    },
+    {
+      "id": "2fde",
+      "image": [
+        "http://assets/furniture/cart3.png"
+      ],
+      "descriptionImage": [
+        "/assets/furniture/cart1.png",
+        "/assets/furniture/cart2.png",
+        "/assets/furniture/cart3.png",
+        "/assets/furniture/cart4.png"
+      ],
+      "title": "Dining table",
+      "description": "Large wooden dining table. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
+      "price": 25999,
+      "unprice": 25999,
+      "count": 1,
+      "size": [
+        {
+          "size": "150x40x50"
+        }
+      ],
+      "color": [
+        {
+          "color": "black"
+        },
+        {
+          "color": "oak"
+        }
+      ],
+      "review": [
+        {
+          "comment": "Beautiful and functional.",
+          "nickName": "Igor",
+          "rating": 5
+        }
+      ],
+      "information": "MDF with coating, stable frame.",
+      "sku": "SKU12352",
+      "category": "TV Stands",
+      "tags": [
+        "living room",
+        "TV furniture"
+      ],
       "share": [
         {
           "image": "shareFacebook",

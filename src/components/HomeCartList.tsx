@@ -1,9 +1,9 @@
 import shareImage from "../assets/home/home-cart/share-cart.svg";
 import compareImage from "../assets/home/home-cart/compare-cart.svg";
 import likeImage from "../assets/home/home-cart/like-cart.svg";
-import { useMebel } from "./context/MebelContext";
 import { useCart } from "./context/CartContext";
 import { IMebel } from "../types/IMebel";
+import { NavLink } from "react-router";
 
 interface IHomeCartListProps {
   furnitures: IMebel[];
@@ -109,6 +109,11 @@ export const HomeCartList = ({
                   </div>
                 </div>
                 <div className="bg-darkGrey absolute left-0 top-0 w-full h-full bg-opacity-50 flex flex-col justify-center items-center gap-6 opacity-0 transition-all ease-in-out hover:opacity-100  z-10">
+                  <NavLink
+                    className="bg-white text-orange w-max px-14 py-3 hover:bg-orange hover:bg-opacity-40 hover:text-white transition-colors ease-in rounded-lg bg-opacity-70"
+                    to={`/furniture/${furniture.id}`}>
+                    Detail
+                  </NavLink>
                   {totalItemsCartCount(furniture.id) === 0 ? (
                     <button
                       onClick={() => addToCart(furniture)}

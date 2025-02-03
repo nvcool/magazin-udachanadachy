@@ -13,8 +13,9 @@ interface IHeaderProps {
 const links = [
   { link: "/", name: "Home" },
   { link: "cart", name: "Cart" },
-  { link: "about", name: "About" },
+  { link: "shop", name: "Shop" },
   { link: "contact", name: "Contact" },
+  { link: "admin", name: "Admin" },
 ];
 
 export const Header = ({ formatPrice }: IHeaderProps) => {

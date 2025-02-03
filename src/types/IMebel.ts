@@ -1,5 +1,5 @@
 export interface IMebel {
-  id: number;
+  id: string;
   image: string[];
   descriptionImage: string[];
   title: string;

@@ -1,34 +1,55 @@
-import { Navigate, useParams } from "react-router";
+import { Navigate, Outlet, useParams } from "react-router";
 import { FurnituresDetailHeder } from "../components/FurnituresDetailHeder";
 import { FurnituresDetailInfotmation } from "../components/FurnituresDetailInfotmation";
 import { FurntituresDetailRelatedProducts } from "../components/FurntituresDetailRelatedProducts";
 import { IMebel } from "../types/IMebel";
 import { useEffect, useState } from "react";
+import { IErrorType } from "../types/IErrorType";
 
 interface IFurnituresDetailProps {
   formatPrice: (price: number) => string;
 }
 
-const getFurniture = (id: number) => {
-  return fetch(`http://localhost:3000/furnitures/${id}`).then((data) => {
-    return data.json();
-  });
+const getFurniture = async (id: string): Promise<IMebel> => {
+  const response = await fetch(`http://localhost:3000/furnitures/${id}`);
+  if (!response.ok) {
+    throw { message: response.statusText, status: response.status };
+  } else {
+    return response.json();
+  }
 };
 
 export const FurnituresDetail = ({ formatPrice }: IFurnituresDetailProps) => {
   const [furniture, setFurniture] = useState<IMebel>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<IErrorType>();
+
   const { id } = useParams();
 
   const getFurnitureHandler = async () => {
     setIsLoading(true);
-    await new Promise((resolve) => {
+    const dongle = await new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(1);
-      }, 5000);
+        resolve(2);
+      }, 1000);
+      // resolve(getFurniture(Number(id)));
+    }).then((data) => {
+      // setFurniture(data);
+      // setIsLoading(false);
     });
-    const data = await getFurniture(Number(id));
-    setFurniture(data);
+    // .catch((data) => {
+    //   console.log(data);
+    // })
+    // .finally(() => {
+    //   console.log("finally");
+    // });
+    try {
+      const data = await getFurniture(String(id));
+      setFurniture(data);
+      setError(undefined);
+    } catch (error2) {
+      setError(error2 as IErrorType);
+    }
     setIsLoading(false);
   };
 
@@ -36,14 +57,25 @@ export const FurnituresDetail = ({ formatPrice }: IFurnituresDetailProps) => {
     getFurnitureHandler();
   }, []);
 
-  if (furniture === undefined && !isLoading) {
+  if (furniture === undefined && !isLoading && !error) {
     return <Navigate to={"/"} replace />;
   }
 
   return (
     <div className="">
-      {isLoading && "Loading . . ."}
-      {!isLoading && furniture && (
+      {error && (
+        <div className="">
+          <span>{error.status}</span>
+          <span>{error.message}</span>
+        </div>
+      )}
+      {isLoading && (
+        <h3 className=" text-center text-5xl font-semibold py-20">
+          {" "}
+          Loading . . .
+        </h3>
+      )}
+      {!isLoading && !error && furniture && (
         <>
           <FurnituresDetailHeder furnitur={furniture} id={id} />
           <FurnituresDetailInfotmation
@@ -51,6 +83,7 @@ export const FurnituresDetail = ({ formatPrice }: IFurnituresDetailProps) => {
             formatPrice={formatPrice}
           />
           <FurntituresDetailRelatedProducts furnitur={furniture} />
+          <Outlet />
         </>
       )}
     </div>

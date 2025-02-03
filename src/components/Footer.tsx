@@ -34,7 +34,7 @@ export const Footer = () => {
             </NavLink>
             <NavLink
               className="font-medium hover:opacity-50 transition-all ease-in"
-              to={"shop"}>
+              to={"cart"}>
               Shop
             </NavLink>
             <NavLink

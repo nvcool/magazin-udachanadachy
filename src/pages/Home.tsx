@@ -33,8 +33,6 @@ export const Home = ({ formatPrice }: IHomeProps) => {
     setFurnitures(data);
   };
 
-  console.log(furnitures);
-
   useEffect(() => {
     getAllFurnitureHandler();
   }, []);
