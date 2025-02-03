@@ -101,9 +101,7 @@ const putFurnituresById = async (id: string, data: IMebel) => {
 export const Admin = () => {
   const { id } = useParams();
 
-  const { handleSubmit, control, reset, setValue } = useForm<
-    z.infer<typeof formSchema>
-  >({
+  const { handleSubmit, control, reset } = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
 
