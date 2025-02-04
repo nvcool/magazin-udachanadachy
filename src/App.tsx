@@ -27,6 +27,9 @@ import shareInstagram from "./assets/detailPage/detail-share-instagram.svg";
 import shareTwitter from "./assets/detailPage/detail-share-twitter.svg";
 import { Admin } from "./pages/Admin";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
+
 // const carts = [
 //   {
 //     id: 1,
@@ -434,30 +437,38 @@ function App() {
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
-      <MebelContext.Provider value={{ furnitures, setFurnitures }}>
-        <div className="">
-          <Routes>
-            <Route element={<AppLayout formatPrice={formatPrice} />}>
-              <Route path="/" element={<Home formatPrice={formatPrice} />} />
-              <Route path="shop" element={<Shop formatPrice={formatPrice} />} />
-              <Route path="about" element={<About />} />
-              <Route
-                path="contact"
-                element={<Contact formatPrice={formatPrice} />}
-              />
-              <Route path="admin" element={<Admin />} />
-              <Route path="cart" element={<Cart formatPrice={formatPrice} />} />
-              <Route
-                path="/furniture/:id"
-                element={<FurnituresDetail formatPrice={formatPrice} />}
-              />
-              <Route path="/furniture/:id/admin" element={<Admin />} />
-            </Route>
-          </Routes>
-        </div>
-      </MebelContext.Provider>
-    </CartContext.Provider>
+    <QueryClientProvider client={queryClient}>
+      <CartContext.Provider value={{ cart, setCart }}>
+        <MebelContext.Provider value={{ furnitures, setFurnitures }}>
+          <div className="">
+            <Routes>
+              <Route element={<AppLayout formatPrice={formatPrice} />}>
+                <Route path="/" element={<Home formatPrice={formatPrice} />} />
+                <Route
+                  path="shop"
+                  element={<Shop formatPrice={formatPrice} />}
+                />
+                <Route path="about" element={<About />} />
+                <Route
+                  path="contact"
+                  element={<Contact formatPrice={formatPrice} />}
+                />
+                <Route path="admin" element={<Admin />} />
+                <Route
+                  path="cart"
+                  element={<Cart formatPrice={formatPrice} />}
+                />
+                <Route
+                  path="/furniture/:id"
+                  element={<FurnituresDetail formatPrice={formatPrice} />}
+                />
+                <Route path="/furniture/:id/admin" element={<Admin />} />
+              </Route>
+            </Routes>
+          </div>
+        </MebelContext.Provider>
+      </CartContext.Provider>
+    </QueryClientProvider>
   );
 }
 

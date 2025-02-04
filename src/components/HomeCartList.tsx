@@ -31,7 +31,7 @@ export const HomeCartList = ({
     });
   };
 
-  const plusToCart = (id: number) => {
+  const plusToCart = (id: string) => {
     setCart((prev) => {
       return prev.map((item) => {
         return item.id === id ? { ...item, count: item.count + 1 } : item;
@@ -39,7 +39,7 @@ export const HomeCartList = ({
     });
   };
 
-  const totalItemsCartCount = (id: number) => {
+  const totalItemsCartCount = (id: string) => {
     return cart.reduce((total, item) => {
       if (item.id === id) {
         return total + item.count;
@@ -48,7 +48,7 @@ export const HomeCartList = ({
     }, 0);
   };
 
-  const minusCart = (id: number) => {
+  const minusCart = (id: string) => {
     setCart((prev) => {
       return prev
         .map((item) => {

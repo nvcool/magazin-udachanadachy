@@ -81,7 +81,7 @@
         "/assets/furniture/cart3.png",
         "/assets/furniture/cart4.png"
       ],
-      "title": "Leather armchair",
+      "title": "Leather armchair ",
       "description": "An elegant armchair made of genuine leather. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
       "price": 29999,
       "unprice": 34999,
@@ -383,7 +383,7 @@
         "/assets/furniture/cart3.png",
         "/assets/furniture/cart4.png"
       ],
-      "title": "Kitchen set",
+      "title": "Kitchen set ",
       "description": "Modular kitchen set with backlighting. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
       "price": 99999,
       "unprice": 119999,
@@ -442,68 +442,10 @@
         "/assets/furniture/cart3.png",
         "/assets/furniture/cart4.png"
       ],
-      "title": "TV stand",
+      "title": "TV stand ",
       "description": "Elegant TV stand with shelves for accessories. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
       "price": 12999,
       "unprice": 14999,
-      "count": 1,
-      "size": [
-        {
-          "size": "150x40x50"
-        }
-      ],
-      "color": [
-        {
-          "color": "black"
-        },
-        {
-          "color": "oak"
-        }
-      ],
-      "review": [
-        {
-          "comment": "Beautiful and functional.",
-          "nickName": "Igor",
-          "rating": 5
-        }
-      ],
-      "information": "MDF with coating, stable frame.",
-      "sku": "SKU12352",
-      "category": "TV Stands",
-      "tags": [
-        "living room",
-        "TV furniture"
-      ],
-      "share": [
-        {
-          "image": "shareFacebook",
-          "link": "/furniture/:id"
-        },
-        {
-          "image": "shareInstagram",
-          "link": "/furniture/:id"
-        },
-        {
-          "image": "shareTwitter",
-          "link": "/furniture/:id"
-        }
-      ]
-    },
-    {
-      "id": "2fde",
-      "image": [
-        "http://assets/furniture/cart3.png"
-      ],
-      "descriptionImage": [
-        "/assets/furniture/cart1.png",
-        "/assets/furniture/cart2.png",
-        "/assets/furniture/cart3.png",
-        "/assets/furniture/cart4.png"
-      ],
-      "title": "Dining table",
-      "description": "Large wooden dining table. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sed, ratione fugit totam voluptatem assumenda quas, at numquam doloribus ducimus atque facilis molestias aut. Iure eius id possimus a quod?",
-      "price": 25999,
-      "unprice": 25999,
       "count": 1,
       "size": [
         {

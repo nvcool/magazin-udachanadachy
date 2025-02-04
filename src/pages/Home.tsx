@@ -14,28 +14,61 @@ import homeImage8 from "../assets/home/home-furniture/home-8.png";
 import homeImage9 from "../assets/home/home-furniture/home-9.png";
 import { useEffect, useState } from "react";
 import { IMebel } from "../types/IMebel";
+import { useQuery } from "@tanstack/react-query";
 
 interface IHomeProps {
   formatPrice: (price: number) => string;
 }
 
-const getAllFurniture = () => {
-  return fetch("http://localhost:3000/furnitures").then((data) => {
-    return data.json();
-  });
-};
+// const getAllFurniture = () => {
+//   return fetch("http://localhost:3000/furnitures").then((data) => {
+//     return data.json();
+//   });
+// };
 
 export const Home = ({ formatPrice }: IHomeProps) => {
-  const [furnitures, setFurnitures] = useState<IMebel[]>([]);
+  // const [furnitures, setFurnitures] = useState<IMebel[]>([]);
 
-  const getAllFurnitureHandler = async () => {
-    const data = await getAllFurniture();
-    setFurnitures(data);
-  };
+  const {
+    data: furnitures,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: ["furnituresData"],
+    queryFn: async () => {
+      const get = await fetch("http://localhost:3000/furnitures");
+      if (!get.ok) {
+        throw { message: get.statusText, status: get.status };
+      } else {
+        return get.json();
+      }
+    },
+  });
 
-  useEffect(() => {
-    getAllFurnitureHandler();
-  }, []);
+  if (isLoading) {
+    return (
+      <h3 className=" text-center text-5xl font-semibold py-20">
+        Loading . . .
+      </h3>
+    );
+  }
+
+  if (isError) {
+    return (
+      <h3 className=" text-center text-5xl font-semibold py-20">
+        Error! Try Again! Error:
+      </h3>
+    );
+  }
+
+  // const getAllFurnitureHandler = async () => {
+  //   const data = await getAllFurniture();
+  //   setFurnitures(data);
+  // };
+
+  // useEffect(() => {
+  //   getAllFurnitureHandler();
+  // }, []);
 
   return (
     <div className="grid gap-[56px]">
